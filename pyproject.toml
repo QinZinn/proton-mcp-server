@@ -1,0 +1,25 @@
+[project]
+name = "proton-mcp-server"
+version = "0.1.0"
+description = "MCP server exposing Proton Mail (via Proton Mail Bridge IMAP) with read access and multi-account support."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "zinnn" }]
+keywords = ["mcp", "proton-mail", "imap", "proton-bridge", "ai-agent"]
+dependencies = [
+    "mcp>=2.0",
+]
+
+[project.scripts]
+proton-mcp-server = "proton_mcp_server.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/proton_mcp_server"]
+
+[tool.uv]
+package = true
